@@ -1,0 +1,331 @@
+
+lord_marrowgar:
+  npc:
+    id: 36612
+    name: Lord Marrowgar
+  segments:
+    1:
+      label: Default
+      group: Tank and Spank
+      transitions:
+        - event: SPELL_CAST_START
+          source: Lord Marrowgar
+          spell: Bone Storm
+    2:
+      label: Bone Storm
+      group: Bone Storm
+      transitions:
+        - event: SPELL_CAST_SUCCESS
+          source: Lord Marrowgar
+          spell: Bone Slice
+          goto: 1
+
+lady_deathwhisper:
+  npc:
+    id: 36855
+    name: Lady Deathwhisper
+  npcs:
+    - name: Lady Deathwhisper
+    - name: Cult Adherent
+    - name: Cult Fanatic
+    - name: Reanimated Adherent
+    - name: Reanimated Fanatic
+    - name: Empowered Adherent
+    - name: Deformed Fanatic
+  segments:
+    1:
+      label: Add Phase
+      transitions:
+        - event: SPELL_AURA_REMOVED
+          spell: Mana Barrier
+    2:
+      label: Boss Phase
+
+gunship_skybreaker:
+  npc:
+    id: 37540
+    name: Gunship Battle
+    unit: The Skybreaker
+    timeout: 45
+    end:
+      event: SPELL_DAMAGE
+      dest: Gunship Hull
+      spell: Explosion
+  npcs:
+    - name: The Skybreaker
+    - name: Muradin Bronzebeard
+    - name: Skybreaker Sergeant
+    - name: Skybreaker Marine
+    - name: Skybreaker Rifleman
+    - name: Skybreaker Mortar Soldier
+    - name: Skybreaker Sorcerer
+  segments:
+    1:
+      label: Default
+
+gunship_ogrims_hammer:
+  npc:
+    id: 37215
+    name: Gunship Battle
+    unit: Orgrim's Hammer
+    timeout: 45
+    end:
+      event: SPELL_DAMAGE
+      dest: Gunship Hull
+      spell: Explosion
+  npcs:
+    - name: Ogrim's Hammer
+    - name: High Overlord Saurfang
+    - name: Kor'kron Sergeant
+    - name: Kor'kron Marine
+    - name: Kor'kron Rifleman
+    - name: Kor'kron Mortar Soldier
+    - name: Kor'kron Sorcerer
+  segments:
+    1:
+      label: Default
+
+deathbringer_saurfang:
+  npc:
+    id: 37813
+    name: Deathbringer Saurfang
+    heroic:
+      event: SPELL_CAST_SUCCESS
+      source: Deathbringer Saurfang
+      spell: Scent of Blood
+  npcs:
+    - name: Deathbringer Saurfang
+    - name: Blood Beast
+  segments:
+    1:
+      label: Start to 30%
+      transitions:
+        - event: SPELL_AURA_APPLIED
+          dest: Deathbringer Saurfang
+          spell: Frenzy
+    2:
+      label: 30% Frenzy
+
+festergut:
+  npc:
+    id: 36626
+    name: Festergut
+    heroic:
+      event: SPELL_DAMAGE
+      source: Professor Putricide
+      spell: Malleable Goo
+  segments:
+    1:
+      label: Default
+
+rotface:
+  npc:
+    id: 36627
+    name: Rotface
+    heroic:
+      event: SPELL_CAST_SUCCESS
+      source: Professor Putricide
+      spell: Vile Gas
+  segments:
+    1:
+      label: Default
+
+professor_putricide:
+  npc:
+    id: 36678
+    name: Professor Putricide
+    timeout: 30
+    heroic:
+      event: SPELL_CAST_SUCCESS
+      source: Professor Putricide
+      spell: Unbound Plague
+  npcs:
+    - name: Professor Putricide
+    - name: Gas Cloud
+    - name: Volatile Ooze
+  segments:
+    1:
+      label: Start to 70%
+      transitions:
+        - event: SPELL_CAST_SUCCESS
+          source: Professor Putricide
+          spell: Malleable Goo
+    2:
+      label: 70% to 35%
+      transitions:
+        - event: SPELL_AURA_APPLIED
+          source: Professor Putricide
+          spell: Guzzle Potions
+    3:
+      label: 35% Frenzy
+      
+blood_prince_council:
+  npc:
+    id: 37970
+    name: Blood Prince Council
+    unit: Prince Valanar
+    heroic:
+      event: SPELL_AURA_APPLIED
+      source: Prince Keleseth
+      spell: Shadow Prison
+  npcs:
+    - name: Prince Valanar
+    - name: Prince Taldaram
+    - name: Prince Keleseth
+  segments:
+    1:
+      label: Valanar Empowered
+      transitions:
+        - event: SPELL_AURA_APPLIED
+          dest: Prince Taldaram
+          spell: Invocation of Blood
+          goto: 2
+        - event: SPELL_AURA_APPLIED
+          dest: Prince Keleseth
+          spell: Invocation of Blood
+          goto: 3
+    2:
+      label: Taldaram Empowered
+      transitions:
+        - event: SPELL_AURA_APPLIED
+          dest: Prince Valanar
+          spell: Invocation of Blood
+          goto: 1
+        - event: SPELL_AURA_APPLIED
+          dest: Prince Keleseth
+          spell: Invocation of Blood
+          goto: 3
+    3:
+      label: Keleseth Empowered
+      transitions:
+        - event: SPELL_AURA_APPLIED
+          dest: Prince Valanar
+          spell: Invocation of Blood
+          goto: 1
+        - event: SPELL_AURA_APPLIED
+          dest: Prince Taldaram
+          spell: Invocation of Blood
+          goto: 2
+
+blood_queen_lanathel:
+  npc:
+    id: 37955
+    name: Blood-Queen Lana'thel
+    heroic:
+      event: SPELL_AURA_APPLIED
+      dest: Blood-Queen Lana'thel
+      spell: Presence of the Darkfallen
+  segments:
+    1:
+      label: Default
+      transitions:
+        - event: SPELL_CAST_SUCCESS
+          source: Blood-Queen Lana'thel
+          spell: Incite Terror
+    2:
+      label: Air Phase
+      transitions:
+        - event: SPELL_AURA_REMOVED
+          source: Blood-Queen Lana'thel
+          spell: Bloodbolt Whirl
+          goto: 1
+
+valithria_dreamwalker:
+  npc:
+    id: 36789
+    name: Valithria Dreamwalker
+    timeout: 30
+    cooldown: 60
+    end:
+      event: SPELL_CAST_START
+      source: Valithria Dreamwalker
+      spell: Dream Slip
+  npcs:
+    - name: Valithria Dreamwalker
+    - name: Risen Archmage
+    - name: Blazing Skeleton
+    - name: Suppressor
+    - name: Blistering Zombie
+    - name: Gluttonous Abomination
+  segments:
+    1:
+      label: Default
+
+sindragosa:
+  npc:
+    name: Sindragosa
+    timeout: 30
+  npcs:
+    - name: Sindragosa
+    - name: Frost Tomb
+  segments:
+    1:
+      label: Default
+
+lich_king:
+  npc:
+    id: 36597
+    name: The Lich King
+    cooldown: 360
+    end:
+      event: SPELL_CAST_START
+      source: The Lich King
+      spell: Fury of Frostmourne
+    heroic:
+      event: SPELL_CAST_START
+      source: The Lich King
+      spell: Summon Shadow Trap
+  npcs:
+    - name: The Lich King
+    - name: Drudge Ghoul
+    - name: Shambling Horror
+    - name: Raging Spirit
+    - name: Ice Sphere
+    - name: Val'kyr Shadowguard
+    - name: Defile
+    - name: Vile Spirit
+    - name: Spirit Bomb
+    - name: Wicked Spirit
+  segments:
+    1:
+      label: Shambling Horrors
+      transitions:
+        - event: SPELL_CAST_START
+          source: The Lich King
+          spell: Remorseless Winter
+    2:
+      label: Remorseless Winter
+      group: Remorseless Winter
+      transitions:
+        - event: SPELL_CAST_START
+          source: The Lich King
+          spell: Quake
+    3:
+      label: Val'kyr Shadowguards
+      transitions:
+        - event: SPELL_CAST_START
+          source: The Lich King
+          spell: Remorseless Winter
+    4:
+      label: Remorseless Winter
+      group: Remorseless Winter
+      transitions:
+        - event: SPELL_CAST_START
+          source: The Lich King
+          spell: Quake
+    5:
+      label: Vile Spirits
+      group: Vile Spirits
+      transitions:
+        - event: SPELL_CAST_SUCCESS
+          source: The Lich King
+          spell: Harvest Souls
+          goto: 6
+    6:
+      label: Frostmourne Room
+      group: Frostmourne Room
+      transitions:
+        - event: SPELL_CAST_START
+          source: The Lich King
+          spell: Defile
+          goto: 5

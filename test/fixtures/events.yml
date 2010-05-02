@@ -1,0 +1,39 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ts: 2010-04-16 18:31:06
+  event: MyString
+  log_id: 1
+  segment_id: 1
+  source_id: 1
+  dest_id: 1
+  spell_id: 1
+  amount: 1
+  overkill: 1
+  resisted: 1
+  blocked: 1
+  absorbed: 1
+  critical: false
+  glancing: false
+  crushing: false
+  type: MyString
+  extra_spell_id: 1
+
+two:
+  ts: 2010-04-16 18:31:06
+  event: MyString
+  log_id: 1
+  segment_id: 1
+  source_id: 1
+  dest_id: 1
+  spell_id: 1
+  amount: 1
+  overkill: 1
+  resisted: 1
+  blocked: 1
+  absorbed: 1
+  critical: false
+  glancing: false
+  crushing: false
+  type: MyString
+  extra_spell_id: 1

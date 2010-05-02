@@ -1,0 +1,10 @@
+%table
+	%thead
+		%tr
+			%th.left Player
+			%th.left Damage Taken
+	%tbody
+		- @data.each do |t|
+			%tr
+				%td.left= link_to(t.dest_name, "", :class => Unit.html_class(t.dest_class_id))
+				%td.left= t.amount_total.pretty

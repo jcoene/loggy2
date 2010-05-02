@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  region: MyString
+  realm: MyString
+  name: MyString
+  user_id: 1
+
+two:
+  region: MyString
+  realm: MyString
+  name: MyString
+  user_id: 1

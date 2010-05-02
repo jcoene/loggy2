@@ -1,0 +1,128 @@
+
+deathknight:
+  id: 6
+  name: Death Knight
+  spells:
+    - spell: Frost Fever
+    - spell: Blood Plague
+    - spell: Plague Strike
+    - spell: Blood Strike
+    - spell: Obliterate
+    - spell: Howling Blast
+
+druid:
+  id: 11
+  name: Druid
+  spells:
+    - spell: Lacerate
+    - spell: Swipe (Bear)
+    - spell: Mangle (Bear)
+    - spell: Shred
+    - spell: Swipe
+    - spell: Mangle (Cat)
+    - spell: Faerie Fire (Feral)
+    - spell: Faerie Fire
+    - spell: Starfire
+    - spell: Wrath
+    - spell: Swiftmend
+    - spell: Rejuvenation
+    - spell: Wild Growth
+
+hunter:
+  id: 3
+  name: Hunter
+  spells:
+    - spell: Steady Shot
+    - spell: Auto Shot
+    - spell: Explosive Shot
+    - spell: Chimera Shot
+    - spell: Serpent Sting
+
+mage:
+  id: 8
+  name: Mage
+  spells:
+    - spell: Living Bomb
+    - spell: Fireball
+    - spell: Pyroblast
+    - spell: Frostbolt
+    - spell: Ice Lance
+    - spell: Arcane Missiles
+    - spell: Arcane Blast
+    - spell: Arcane Barrage
+
+paladin:
+  id: 2
+  name: Paladin
+  spells:
+    - spell: Holy Light
+    - spell: Beacon of Light
+    - spell: Flash of Light
+    - spell: Divine Storm
+    - spell: Crusader Strike
+    - spell: Consecration
+    - spell: Seal of Command
+    - spell: Judgement
+    - spell: Seal of Corruption
+    - spell: Hammer of the Righteous
+    - spell: Shield of Righteousness
+
+priest:
+  id: 5
+  name: Priest
+  spells:
+    - spell: Penance
+    - spell: Renew
+    - spell: Divine Aegis
+    - spell: Flash Heal
+    - spell: Circle of Healing
+    - spell: Prayer of Healing
+    - spell: Vampiric Touch
+    - spell: Devouring Plague
+    - spell: Mind Flay
+    - spell: Mind Blast
+
+rogue:
+  id: 4
+  name: Rogue
+  spells:
+    - spell: Mutilate
+    - spell: Sinister Strike
+    - spell: Fan of Knives
+    - spell: Rupture
+    - spell: Shiv
+
+shaman:
+  id: 7
+  name: Shaman
+  spells:
+    - spell: Lightning Bolt
+    - spell: Flame Shock
+    - spell: Lava Lash
+    - spell: Chain Lightning
+    - spell: Earth Shield
+    - spell: Chain Heal
+    - spell: Windfury Attack
+    - spell: Stormstrike
+
+warlock:
+  id: 9
+  name: Warlock
+  spells:
+    - spell: Seed of Corruption
+    - spell: Shadow Bolt
+    - spell: Corruption
+    - spell: Immolate
+    - spell: Incinerate
+    - spell: Unstable Affliction
+
+warrior:
+  id: 1
+  name: Warrior
+  spells:
+    - spell: Heroic Strike
+    - spell: Cleave
+    - spell: Slam
+    - spell: Mortal Strike
+    - spell: Shockwave
+    - spell: Revenge

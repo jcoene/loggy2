@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  report_id: 1
+  phase: 1
+  group: 1
+  label: MyString
+
+two:
+  report_id: 1
+  phase: 1
+  group: 1
+  label: MyString

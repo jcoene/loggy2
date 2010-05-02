@@ -1,0 +1,5 @@
+
+.settings/
+tmp/
+*.log
+Thumbs.db

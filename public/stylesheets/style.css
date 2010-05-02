@@ -1,0 +1,127 @@
+form, h1, h2, h3, h4, li, p, table, tbody, td, th, thead, tr, ul {
+  border: 0;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0; }
+
+.spell {
+  font-weight: bold; }
+
+.s_shadow {
+  color: #423e73; }
+
+.s_physical {
+  color: #73563e; }
+
+.s_fire {
+  color: #8b2a2a; }
+
+.s_nature {
+  color: #3e735b; }
+
+.s_frost {
+  color: #1ca0b4; }
+
+.s_holy {
+  color: #fff569; }
+
+.s_arcane {
+  color: #7c7c7c; }
+
+.unit {
+  font-weight: bold; }
+
+.unit_pet {
+  border-bottom: 1px dotted white; }
+
+.u_deathknight {
+  color: #c41f3b; }
+
+.u_druid {
+  color: #ff7d0a; }
+
+.u_hunter {
+  color: #abd473; }
+
+.u_mage {
+  color: #69ccf0; }
+
+.u_paladin {
+  color: #f58cba; }
+
+.u_priest {
+  color: white; }
+
+.u_rogue {
+  color: #fff569; }
+
+.u_shaman {
+  color: #2459ff; }
+
+.u_warlock {
+  color: #9482c9; }
+
+.u_warrior {
+  color: #c79c63; }
+
+.ui-tabs ul.ui-tabs-nav {
+  list-style-type: none; }
+  .ui-tabs ul.ui-tabs-nav li {
+    display: inline-block;
+    margin: 0px 5px 0px 0px; }
+    .ui-tabs ul.ui-tabs-nav li a {
+      display: block;
+      background: #303030;
+      border: 1px solid white;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      padding: 10px; }
+  .ui-tabs ul.ui-tabs-nav li.ui-state-active a {
+    background: #444444; }
+.ui-tabs div.ui-tabs-panel {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px; }
+.ui-tabs div.ui-tabs-hide {
+  display: none; }
+
+body {
+  background-color: #222222;
+  color: white;
+  font-family: Arial;
+  font-size: 0.8em; }
+
+a {
+  color: #69ccf0;
+  text-decoration: none; }
+
+h1 {
+  margin-bottom: 0.7em; }
+
+h2 {
+  margin-bottom: 0.5em; }
+
+p {
+  margin-bottom: 0.5em; }
+
+table {
+  padding: 2px;
+  border: 1px solid #444444;
+  margin-bottom: 0.5em; }
+  table th, table td {
+    padding: 8px;
+    text-align: center; }
+  table .left {
+    text-align: left; }
+  table thead {
+    background: #303030;
+    color: white;
+    border: 1px solid #444444;
+    border-radius: 5px; }
+    table thead tr.sub {
+      font-size: 0.9em;
+      background: #303030; }
+  table tbody {
+    font-size: 0.9em; }
+    table tbody tr:hover {
+      background: #303030; }

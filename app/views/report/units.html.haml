@@ -1,0 +1,23 @@
+%h1= @title
+
+%h2 Units in encounter
+%table
+	%thead
+		%tr
+			%th Name
+			%th Guid
+			%th Flags
+			%th Owner
+			%th Player?
+			%th Pet?
+			%th NPC?
+	%tbody
+		- @units.each do |u|
+			%tr
+				%td= u.name
+				%td= u.guid
+				%td= "%s / %s" % [u.flags, u.flags.to_i(16) & OBJECT_TYPE_MASK]
+				%td= u.owner_id
+				%td= u.is_player ? "PLAYER" : ""
+				%td= u.is_pet ? "PET" : ""
+				%td= u.is_npc ? u.npc_id : ""

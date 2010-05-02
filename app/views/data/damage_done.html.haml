@@ -1,0 +1,12 @@
+%table
+	%thead
+		%tr
+			%th.left Player
+			%th.left Total Damage
+			%th DPS
+	%tbody
+		- @data.each do |t|
+			%tr
+				%td.left= link_to(t.unit_name, "?unit_id=#{t.unit_id}", :class => Unit.html_class(t.unit_class_id))
+				%td.left= t.amount_total.pretty
+				%td= (t.amount_total/@duration.to_i).pretty

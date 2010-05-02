@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  guid: MyString
+  flags: 1
+  npc_id: 1
+  log_id: 1
+
+two:
+  name: MyString
+  guid: MyString
+  flags: 1
+  npc_id: 1
+  log_id: 1

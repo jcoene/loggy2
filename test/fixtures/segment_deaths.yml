@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  unit_id: 1
+  report_id: 1
+  encounter_id: 1
+  segment_id: 1
+  occured_at: 2010-04-21 14:28:41
+
+two:
+  unit_id: 1
+  report_id: 1
+  encounter_id: 1
+  segment_id: 1
+  occured_at: 2010-04-21 14:28:41

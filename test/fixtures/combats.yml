@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  encounter_id: 1
+  user_id: 1
+  guild_id: 1
+  result_code: 1
+  started_at: 2010-04-17 13:21:58
+  finished_at: 2010-04-17 13:21:58
+
+two:
+  encounter_id: 1
+  user_id: 1
+  guild_id: 1
+  result_code: 1
+  started_at: 2010-04-17 13:21:58
+  finished_at: 2010-04-17 13:21:58

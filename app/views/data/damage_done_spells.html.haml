@@ -1,0 +1,37 @@
+%table
+	%thead
+		%tr
+			%th.left Player Name
+			%th.left Spell Name
+			%th{:colspan => 3} Total
+			%th{:colspan => 3} Hits
+			%th{:colspan => 3} Crits
+		%tr.sub
+			%th.left
+			%th.left
+			%th DPS
+			%th Amount
+			%th Events
+			%th Damage
+			%th Hits
+			%th Hit%
+			%th Damage
+			%th Crits
+			%th Crit%
+	%tbody
+		- @data.each do |t|
+			%tr
+				%td.left= unit_link(t.unit_id, t.unit_name, t.unit_class_id)
+				%td.left
+					- if t.source_id != t.unit_id
+						%span{:class => "unit_pet"}= "#{t.source_name}:"
+					!= spell_link(t.spell_id, t.spell_name, t.spell_school)
+				%td= (t.amount_total/@duration.to_i).pretty
+				%td= t.amount_total.pretty
+				%td= t.num_total.pretty
+				%td= t.amount_hits.pretty
+				%td= t.num_hits.pretty
+				%td= t.amount_total > 0 ? Uptime.percent(t.amount_hits, t.amount_total, 0) : "-"
+				%td= t.amount_crits.pretty
+				%td= t.num_crits.pretty
+				%td= t.amount_total > 0 ? Uptime.percent(t.amount_crits, t.amount_total, 0) : "-"

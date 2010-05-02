@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  boss_id: 1
+  attempt_number: 1
+  result_code: 1
+  started_at: 2010-04-17 22:16:31
+  finished_at: 2010-04-17 22:16:31
+
+two:
+  boss_id: 1
+  attempt_number: 1
+  result_code: 1
+  started_at: 2010-04-17 22:16:31
+  finished_at: 2010-04-17 22:16:31

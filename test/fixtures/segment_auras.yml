@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  source_id: 1
+  dest_id: 1
+  spell_id: 1
+  aura_type: 1
+  aura_duration: 1
+  num_gained: 1
+  num_lost: 1
+  num_stacks_max: 1
+  report_id: 1
+  encounter_id: 1
+  segment_id: 1
+
+two:
+  source_id: 1
+  dest_id: 1
+  spell_id: 1
+  aura_type: 1
+  aura_duration: 1
+  num_gained: 1
+  num_lost: 1
+  num_stacks_max: 1
+  report_id: 1
+  encounter_id: 1
+  segment_id: 1

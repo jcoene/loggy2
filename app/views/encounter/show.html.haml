@@ -1,0 +1,32 @@
+%h1= @title
+%p= "Combat lasted %s" % @duration.to_clock
+
+%h1 Segments
+%table
+	%thead
+		%tr
+			%th #
+			%th.left Phase
+			%th Duration
+	%tbody
+		- @encounter.segments.each do |r|
+			%tr
+				%td= r.phase
+				%td.left= link_to(r.label, r)
+				%td= Timespan.to_s(r.started_at, r.finished_at)
+
+%h1 Data
+#jungle
+	%ul
+		%li!=link_to("Player DPS", data_path("damage_done", "html", {"encounter_id" => @encounter.id, "is_player" => true, "is_friendlyfire" => false}))
+		%li=link_to("Player Outgoing", data_path("damage_done_spells", "html", {"encounter_id" => @encounter.id, "is_player" => true, "is_friendlyfire" => false}))
+		%li!=link_to("Player Incoming", data_path("damage_taken", "html", {"encounter_id" => @encounter.id, "is_player" => true, "is_friendlyfire" => false}))
+		%li=link_to("NPC DPS", data_path("damage_done", "html", {"encounter_id" => @encounter.id, "is_npc" => true, "is_friendlyfire" => false}))
+		%li!=link_to("NPC Outgoing", data_path("damage_done_spells", "html", {"encounter_id" => @encounter.id, "is_npc" => true, "is_friendlyfire" => false}))
+		%li=link_to("NPC Incoming", data_path("damage_taken", "html", {"encounter_id" => @encounter.id, "is_npc" => true, "is_friendlyfire" => false}))
+
+#accord
+	%h3 Hi
+	%div Something
+	%h3 Bye
+	%div Something

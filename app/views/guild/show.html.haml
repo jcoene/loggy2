@@ -1,0 +1,11 @@
+%h1= @title
+
+%h2 Reports for Guild
+%table
+	%thead
+		%tr
+			%th.left Report
+	%tbody
+		- @guild.reports.each do |r|
+			%tr
+				%td.left= link_to(r.label, r)

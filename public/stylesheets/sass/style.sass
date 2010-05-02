@@ -1,0 +1,148 @@
+
+!bg = #222222
+!light = #444444
+!text = #ffffff
+!link = #222266
+!hl = #303030
+
+!shadow = #423e73
+!physical = #73563e
+!fire = #8b2a2a
+!nature = #3e735b
+!frost = #1ca0b4
+!holy = #fff569
+!arcane = #7c7c7c
+
+!deathknight = #c41f3b
+!druid = #ff7d0a
+!hunter = #abd473
+!mage = #69ccf0
+!paladin = #f58cba
+!priest = #ffffff
+!rogue = #fff569
+!shaman = #2459ff
+!warlock = #9482c9
+!warrior = #c79c63
+
+form, h1, h2, h3, h4, li, p, table, tbody, td, th, thead, tr, ul
+  border: 0
+  border-collapse: collapse
+  margin: 0
+  padding: 0
+
+.spell
+  font-weight: bold
+.s_shadow
+  color = !shadow
+.s_physical
+  color = !physical
+.s_fire
+  color = !fire
+.s_nature
+  color = !nature
+.s_frost
+  color = !frost
+.s_holy
+  color = !holy
+.s_arcane
+  color = !arcane
+
+.unit
+  font-weight: bold
+
+.unit_pet
+  border-bottom:  1px dotted white
+
+.u_deathknight
+  color = !deathknight
+.u_druid
+  color = !druid
+.u_hunter
+  color = !hunter
+.u_mage
+  color = !mage
+.u_paladin
+  color = !paladin
+.u_priest
+  color = !priest
+.u_rogue
+  color = !rogue
+.u_shaman
+  color = !shaman
+.u_warlock
+  color = !warlock
+.u_warrior
+  color = !warrior
+
+.ui-tabs
+  
+  ul.ui-tabs-nav
+    list-style-type: none
+    
+    li
+      display: inline-block
+      margin: 0px 5px 0px 0px
+      a
+        display: block
+        background = !hl
+        border = 1px "solid" white
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        padding: 10px
+        
+    li.ui-state-active
+      a
+        background = !light
+    
+  div.ui-tabs-panel
+    border = 1px "solid" white
+    border-radius = 5px
+    padding = 10px
+  
+  div.ui-tabs-hide
+    display: none
+
+body
+  background-color = !bg
+  color = !text
+  font-family: Arial
+  font-size: 0.8em
+
+a
+  color = !mage
+  text-decoration: none
+
+h1
+  margin-bottom: 0.7em
+
+h2
+  margin-bottom: 0.5em
+
+p
+  margin-bottom: 0.5em
+
+table
+  padding: 2px
+  border = 1px "solid" !light
+  margin-bottom: 0.5em
+
+  th, td
+    padding: 8px
+    text-align: center
+
+  .left
+    text-align: left
+
+  thead
+    background = !hl
+    color = !text
+    border = 1px "solid" !light
+    border-radius: 5px
+    tr.sub
+      font-size: 0.9em
+      background = !hl
+
+  tbody
+    font-size: 0.9em
+    tr:hover
+      background = !hl
