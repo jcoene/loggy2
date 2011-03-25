@@ -2,6 +2,9 @@
 %head
 	%title=@title
 	=stylesheet_link_tag "style"
-	=javascript_include_tag "jquery", "jquery_ui", "script"
+	=javascript_include_tag "jq", "jq-pl", "jq-ui", "jq-ui-ddcl", "jq-bt", "script"
 %body
-	#container=yield
+	#header
+		#logo= link_to("The Soggy Loggy", root_path)
+		#nav= render_navigation
+	#container!=yield

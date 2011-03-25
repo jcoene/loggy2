@@ -25,6 +25,14 @@ def to_boolean(value)
 	return [true, "true", "T", "t", "yes", "Y", "y", "1", 1].include?(value.class == String ? value.downcase : value)
 end
 
+def string_to_array(value)
+	return value.split(',') || []
+end
+
+def string_is_array(value)
+	return value =~ /^\d+(,\d+)*$/
+end
+
 class Timespan
 
 	def Timespan.to_f(to, from); ts = Timespan.new(to, from); ts.to_f; end
@@ -69,23 +77,29 @@ class Timespan
 		if diff > (60*60) then
 			h = (diff/3600).floor
 			diff -= (h*3600)
-			str << "%d:" % h
+			str << "%02d:" % h
 		end
 		if diff > (60) then
 			m = (diff/60).floor
 			diff -= (m*60)
-			str << "%d:" % m
+			str << "%02d:" % m
 		end
-		if diff > 0 then
-			str << diff.to_s
-		end
+		str << "%02d" % diff.to_i
 		str
 	end
 end
 
 class String
+
+  def unquote
+    self.gsub(/^"(.*?)"$/,'\1')
+	end
+	def quote
+		"\"%s\"" % self
+	end
+
 	def slug
-		str = self
+		str = String.new(self)
 		str.gsub!(/&/, 'and')
 		str.gsub!(/!/, '')
 		str.gsub!(/'/, '')
@@ -96,12 +110,6 @@ class String
 		str.gsub!(/^\-|\-$/i, '')
 		str.downcase!
 		str
-	end
-  def unquote
-    self.gsub(/^"(.*?)"$/,'\1')
-	end
-	def quote
-		"\"%s\"" % self
 	end
 end
 

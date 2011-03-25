@@ -1,0 +1,13 @@
+%h1= @title
+%table
+	%thead
+		%tr
+			%th.left Region
+			%th.left Realm
+			%th.left Guild
+	%tbody
+		- @guilds.each do |r|
+			%tr
+				%td.left= r.region
+				%td= r.realm
+				%td= link_to(r.name, r)

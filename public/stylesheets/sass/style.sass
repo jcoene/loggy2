@@ -1,148 +1,347 @@
 
-!bg = #222222
-!light = #444444
-!text = #ffffff
-!link = #222266
-!hl = #303030
+// !bg = #222222
+// !light = #444444
+// !text = #ffffff
+// !link = #222266
+// !hl = #303030
+// !cwidth = 950px
 
-!shadow = #423e73
-!physical = #73563e
-!fire = #8b2a2a
-!nature = #3e735b
-!frost = #1ca0b4
-!holy = #fff569
-!arcane = #7c7c7c
+!bg = white
+!light = #eee
+!text = #666
+!link = #226
 
+!table_border = 1px "solid" !light
+!table_color = !text
+!table_background = white
+!table_header_background = #efefef
+!table_header_color = !text
+!table_body_hover_background = #EBFFFF
+
+!cwidth = 1050px
+
+!shadow = #631D8F
+!physical = #8C8573
+!fire = #D12626
+!nature = #7BD126
+!frost = #16A7F0
+!holy = #B0AB28
+!arcane = #79A5A6
+
+!npc = #000000
+!pet = #000000
 !deathknight = #c41f3b
-!druid = #ff7d0a
-!hunter = #abd473
-!mage = #69ccf0
-!paladin = #f58cba
-!priest = #ffffff
-!rogue = #fff569
+!druid = #e37100
+!hunter = #84a35a
+!mage = #36abd6
+!paladin = #de66da
+!priest = #444444
+!rogue = #e6d602
 !shaman = #2459ff
 !warlock = #9482c9
 !warrior = #c79c63
 
+html, body
+	width: 100%
+	height: 100%
+	margin: 0
+	padding: 0
+
 form, h1, h2, h3, h4, li, p, table, tbody, td, th, thead, tr, ul
-  border: 0
-  border-collapse: collapse
-  margin: 0
-  padding: 0
+	border: 0
+	border-collapse: collapse
+	margin: 0
+	padding: 0
 
 .spell
-  font-weight: bold
+
 .s_shadow
-  color = !shadow
+	color = !shadow
 .s_physical
-  color = !physical
+	color = !physical
 .s_fire
-  color = !fire
+	color = !fire
 .s_nature
-  color = !nature
+	color = !nature
 .s_frost
-  color = !frost
+	color = !frost
 .s_holy
-  color = !holy
+	color = !holy
 .s_arcane
-  color = !arcane
+	color = !arcane
 
 .unit
-  font-weight: bold
 
-.unit_pet
-  border-bottom:  1px dotted white
+.u_pet
+	color = !pet
+	border-bottom =	1px "dotted" !pet
 
-.u_deathknight
-  color = !deathknight
-.u_druid
-  color = !druid
-.u_hunter
-  color = !hunter
-.u_mage
-  color = !mage
-.u_paladin
-  color = !paladin
-.u_priest
-  color = !priest
-.u_rogue
-  color = !rogue
-.u_shaman
-  color = !shaman
-.u_warlock
-  color = !warlock
-.u_warrior
-  color = !warrior
+.npc
+	color = !npc
+	border-bottom = 1px "dashed" !npc
 
-.ui-tabs
-  
-  ul.ui-tabs-nav
-    list-style-type: none
-    
-    li
-      display: inline-block
-      margin: 0px 5px 0px 0px
-      a
-        display: block
-        background = !hl
-        border = 1px "solid" white
-        border-top-left-radius: 5px
-        border-top-right-radius: 5px
-        padding: 10px
-        
-    li.ui-state-active
-      a
-        background = !light
-    
-  div.ui-tabs-panel
-    border = 1px "solid" white
-    border-radius = 5px
-    padding = 10px
-  
-  div.ui-tabs-hide
-    display: none
+.player
+
+.p_deathknight
+	color = !deathknight
+.p_druid
+	color = !druid
+.p_hunter
+	color = !hunter
+.p_mage
+	color = !mage
+.p_paladin
+	color = !paladin
+.p_priest
+	color = !priest
+.p_rogue
+	color = !rogue
+.p_shaman
+	color = !shaman
+.p_warlock
+	color = !warlock
+.p_warrior
+	color = !warrior
+
+.ui-widget-overlay
+	background: url('/images/overlay.png') top left repeat
+	opacity: 0.5
+	position: absolute
+	top: 0
+	left: 0
+
+.ui-dropdownchecklist-wrapper
+	background = !bg
+	border = 1px "solid" !light
+	border-radius: 2px
+
+	.ui-dropdownchecklist
+	.ui-dropdownchecklist-hover
+		background = !table_body_hover_background
+	.ui-dropdownchecklist-text
+		font-weight: bold
+		padding: 3px
+
+
+.ui-dropdownchecklist-dropcontainer-wrapper
+	background = !bg
+	border = 1px "solid" !light
+	border-radius: 5px
+
+	.ui-dropdownchecklist-dropcontainer
+
+		.ui-dropdownchecklist-item
+
+		.ui-dropdownchecklist-item:hover
+			background = !table_body_hover_background
+
+.ui-dialog
+	border = 1px "solid" !light
+	background = !bg
+	border-radius: 5px
+	-webkit-box-shadow: 0px 0px 7px #222
+
+	.ui-dialog-titlebar
+		background = !light
+		padding: 5px 5px 5px 10px
+
+		.ui-dialog-title
+			text-shadow = 1px 1px 1px !bg
+			font-weight: bold
+			font-size: 1.1em
+	
+		.ui-dialog-titlebar-close
+			display: none
+
+	.ui-dialog-content
+		padding: 10px
+
+.ui-tabs-container
+
+	ul.ui-tabs-nav
+		list-style-type: none
+
+		li
+			display: inline-block
+			a
+				display: block
+				border = 1px "solid" !light
+				border-bottom: 0px
+				border-top-left-radius: 4px
+				border-top-right-radius: 4px
+				color = !text
+				padding: 2px 5px 2px 5px
+				text-shadow = 1px 1px 1px !bg
+				margin: 0px 5px 0px 0px
+
+		li.ui-tabs-selected
+			a
+				background = !light
+				border-top = 2px "solid" !text
+				font-weight: bold
+
+	.ui-tabs-panel
+		
+
+	.ui-tabs-hide
+		display: none
 
 body
-  background-color = !bg
-  color = !text
-  font-family: Arial
-  font-size: 0.8em
+	background-color = !bg
+	color = !text
+	font-family: Arial
+	font-size: 0.8em
+	letter-spacing: 0.05em
 
 a
-  color = !mage
-  text-decoration: none
+	color = !mage
+	text-decoration: none
 
 h1
-  margin-bottom: 0.7em
+	margin-bottom: 0.7em
+
 
 h2
-  margin-bottom: 0.5em
+	margin-bottom: 0.5em
 
 p
-  margin-bottom: 0.5em
+	margin-bottom: 0.5em
+
+input[type="submit"]
+	background = !bg
+	border = 1px solid !light
+	border-radius: 2px
+	color = !text
+	padding: 2px
+	text-shadow = 1px 1px 1px !light
 
 table
-  padding: 2px
-  border = 1px "solid" !light
-  margin-bottom: 0.5em
+	border = !table_border
+	background = !table_background
+	padding: 2px
+	margin-bottom: 0.5em
+	width: 100%
 
-  th, td
-    padding: 8px
-    text-align: center
+	th, td
+		border = !table_border
+		padding: 8px
+		text-align: center
 
-  .left
-    text-align: left
+	.left
+		text-align: left
 
-  thead
-    background = !hl
-    color = !text
-    border = 1px "solid" !light
-    border-radius: 5px
-    tr.sub
-      font-size: 0.9em
-      background = !hl
+	.sep
+	
+	thead
+		background = !table_header_background
+		color = !table_header_color
+		font-weight: bold
+		text-shadow = 1px 1px 1px !bg
+		tr.sub
+			background = !table_background
+			font-size: 0.85em
 
-  tbody
-    font-size: 0.9em
-    tr:hover
-      background = !hl
+	tbody.major
+		cursor: pointer
+		font-size: 0.85em
+		.unit
+			font-weight: bold
+		tr.r1
+			background = #fafafa
+		tr:hover
+			background = !table_body_hover_background
+	
+	tbody.minor
+		font-size: 0.8em
+		td.first
+			padding-left: 15px
+
+	td.loading
+		background: url('/images/loading.gif') 6px 6px no-repeat
+		padding-left: 30px
+
+	td.expandable
+		background: url('/images/expandable.png') 9px 9px no-repeat
+		padding-left: 30px
+
+	td.expanded
+		background: url('/images/expanded.png') 9px 9px no-repeat
+		padding-left: 30px
+
+
+#header
+	position: relative
+	margin: auto
+	width = !cwidth
+	#logo
+		color: !text
+		display: inline-block
+		font-family: Palatino Linotype, Book Antiqua, Palatino
+		font-size: 3em
+		font-weight: bold
+		padding: 5px
+		text-shadow: 1px 1px 1px black
+		a
+			color: inherit
+	#nav
+		display: inline-block
+		position: absolute
+		bottom: 0px
+		right: 20px
+		a
+			color = !text
+			text-shadow = 1px 1px 1px !bg
+		a.selected
+			font-weight: bold
+		ul
+			li
+				display: inline-block
+				padding: 5px 10px 5px 10px
+			li.selected
+				background = !light
+				border-top = 2px "solid" !text
+				-webkit-border-top-left-radius: 4px
+				-webkit-border-top-right-radius: 4px
+				
+
+#container
+	margin: auto
+	width = !cwidth
+	border = 3px "solid" !light
+	border-radius: 3px
+
+	h1
+		background = !light
+		display: block
+		font-size: 1.4em
+		margin: 0
+		padding: 5px
+		text-transform: uppercase
+		text-shadow = 1px 1px 1px !bg
+
+	h5
+		background = !light
+		display: block
+		font-size: 0.8em
+		margin: 0
+		padding: 0px 0px 5px 5px
+		text-transform: uppercase
+		text-shadow = 1px 1px 1px !bg
+
+	#toolbar
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(232,232,232)), color-stop(0.7, rgb(255,255,255)))
+		border: 1px solid #ffffff
+		padding: 5px
+
+		div
+			background: url('/images/grip.png') left 50% no-repeat
+			display: inline-block
+			padding: 3px 15px 3px 5px
+
+	#data
+		padding: 5px
+
+.bt
+	font-size: 0.8em
+	color = !bg
+	

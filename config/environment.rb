@@ -19,7 +19,8 @@ Rails::Initializer.run do |config|
 	
 	config.gem "haml"
 	config.gem "mysql"
-
+	config.gem "simple-navigation"
+	
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -44,5 +45,4 @@ Rails::Initializer.run do |config|
 end
 
 Haml::Template.options[:format] = :html5
-Haml::Template.options[:escape_html] = false
 #Sass::Plugin.options[:style] = :compressed

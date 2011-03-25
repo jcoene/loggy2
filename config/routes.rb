@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :zones
+
+  map.resources :bosses
+
   # The priority is based upon order of creation: first created -> highest priority.
 	
   # Sample of regular route:
@@ -41,26 +45,14 @@ ActionController::Routing::Routes.draw do |map|
 
 	map.data "d/:action.:format", :controller => "data"
 
-	map.resources :guild, :as => "g"
-	map.resources :report, :as => "r"
-	map.resources :encounter, :as => "e"
-	map.resources :segment, :as => "s"
-	#map.resources :segment, :as => "s" do |s|
-	#	s.data ":node.:format", :controller => "segment", :action => "data"
-	#end
-
-  #map.segment 's/:id/:action.:format', :controller => "segment", :requirements => { :action => /[a-z]{1,3}/, :format => /xml|json|html/ }
-  #map.segment 's/:id', :controller => "segment", :action => "show"
+	map.resources :guilds, :as => "g"
+	map.resources :reports, :as => "r"
+	map.resources :encounters, :as => "e"
+	map.resources :segments, :as => "s"
+	map.resources :zones, :as => "z"
+	map.resources :bosses, :as => "b"
 	
-	#map.encounter 'e/:id', :controller => "encounter", :action => "show"
-	#map.encounters 'e', :controller => "report", :action => "index"
-	#map.report_units 'ru/:id', :controller => "report", :action => "units"
-	#map.report 'r/:id', :controller => "report", :action => "show"
-	#map.reports 'r', :controller => "report", :action => "index"
-
-  #map.connect ':controller/:action/:id'
-  #map.connect ':controller/:action/:id.:format'
-
-	map.root :controller => "report", :action => "index"
+	map.home "/", :controller => "home", :action => "index"
+	map.root :controller => "home", :action => "index"
 	
 end

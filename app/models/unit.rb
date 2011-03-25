@@ -50,7 +50,7 @@ class Unit < ActiveRecord::Base
 	end
 
 	def Unit.html_class(s)
-		"unit u_%s" % Unit.class_name(s)
+		"unit player p_%s" % Unit.class_name(s)
 	end
 
 	def Unit.class_name(id)

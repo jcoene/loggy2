@@ -1,0 +1,25 @@
+%h1= @title
+%h5= "%s on %s" % [guild_link(@encounter.guild), report_link(@encounter.report)]
+
+#toolbar
+	#segments
+		- form_tag('', :method => 'get') do
+			= select_tag('segments[]', options_for_select(@segments_list, @segments_selected), :multiple => true, :class => 'ui-segment-selector')
+			= submit_tag('Go')
+	#duration= @duration.to_clock
+	#result= @encounter.result_name
+
+#data
+	%div.ui-tabs-container
+		%ul
+			%li!=link_to("Damage Done", data_path("damage_done", "html", {"encounter_id" => @encounter.id, "minor_action" => "damage_done_spells", "is_player" => true, "is_friendlyfire" => false, "segments" => @segments_selected.join(',')}))
+			%li!=link_to("Damaged Who", data_path("damage_done", "html", {"encounter_id" => @encounter.id, "minor_action" => "damage_done_targets", "is_player" => true, "is_friendlyfire" => false, "segments" => @segments_selected.join(',')}))
+
+			%li!=link_to("Healing Done", data_path("healing_done", "html", {"encounter_id" => @encounter.id, "minor_action" => "healing_done_spells", "is_player" => true, "segments" => @segments_selected.join(',')}))
+			%li!=link_to("Healed Who", data_path("healing_done", "html", {"encounter_id" => @encounter.id, "minor_action" => "healing_done_targets", "is_player" => true, "segments" => @segments_selected.join(',')}))
+
+			%li!=link_to("Damage Taken", data_path("damage_taken", "html", {"encounter_id" => @encounter.id, "is_player" => true, "is_friendlyfire" => false, "segments" => @segments_selected.join(',')}))
+
+			%li=link_to("Monster Damage", data_path("damage_done", "html", {"encounter_id" => @encounter.id, "minor_action" => "damage_done_spells", "is_npc" => true, "is_friendlyfire" => false, "segments" => @segments_selected.join(',')}))
+			%li=link_to("Monster Targets", data_path("damage_done", "html", {"encounter_id" => @encounter.id, "minor_action" => "damage_done_targets", "is_npc" => true, "is_friendlyfire" => false, "segments" => @segments_selected.join(',')}))
+			%li=link_to("Monster Taken", data_path("damage_taken", "html", {"encounter_id" => @encounter.id, "is_npc" => true, "is_friendlyfire" => false, "segments" => @segments_selected.join(',')}))

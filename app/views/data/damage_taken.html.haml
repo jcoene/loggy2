@@ -5,6 +5,6 @@
 			%th.left Damage Taken
 	%tbody
 		- @data.each do |t|
-			%tr
-				%td.left= link_to(t.dest_name, "", :class => Unit.html_class(t.dest_class_id))
+			%tr{:class => cycle("r1", "r2")}
+				%td.left= unit_link(t.dest_id, t.dest_name, t.dest_class_id, t.dest_npc_id)
 				%td.left= t.amount_total.pretty

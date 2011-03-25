@@ -1,0 +1,13 @@
+%h1= @title
+%table
+	%thead
+		%tr
+			%th.left Name
+			%th Encounters
+			%th Segments
+	%tbody
+		- @reports.each do |r|
+			%tr
+				%td.left= link_to(r.label, r)
+				%td= r.encounters.length
+				%td= r.segments.length

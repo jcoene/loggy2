@@ -1,0 +1,24 @@
+<h1>Listing bosses</h1>
+
+<table>
+  <tr>
+    <th>Zone</th>
+    <th>Seq</th>
+    <th>Name</th>
+  </tr>
+
+<% @bosses.each do |boss| %>
+  <tr>
+    <td><%=h boss.zone_id %></td>
+    <td><%=h boss.seq %></td>
+    <td><%=h boss.name %></td>
+    <td><%= link_to 'Show', boss %></td>
+    <td><%= link_to 'Edit', edit_boss_path(boss) %></td>
+    <td><%= link_to 'Destroy', boss, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New boss', new_boss_path %>

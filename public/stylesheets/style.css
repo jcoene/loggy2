@@ -1,98 +1,148 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
 form, h1, h2, h3, h4, li, p, table, tbody, td, th, thead, tr, ul {
   border: 0;
   border-collapse: collapse;
   margin: 0;
   padding: 0; }
 
-.spell {
-  font-weight: bold; }
 
 .s_shadow {
-  color: #423e73; }
+  color: #631d8f; }
 
 .s_physical {
-  color: #73563e; }
+  color: #8c8573; }
 
 .s_fire {
-  color: #8b2a2a; }
+  color: #d12626; }
 
 .s_nature {
-  color: #3e735b; }
+  color: #7bd126; }
 
 .s_frost {
-  color: #1ca0b4; }
+  color: #16a7f0; }
 
 .s_holy {
-  color: #fff569; }
+  color: #b0ab28; }
 
 .s_arcane {
-  color: #7c7c7c; }
+  color: #79a5a6; }
 
-.unit {
-  font-weight: bold; }
 
-.unit_pet {
-  border-bottom: 1px dotted white; }
+.u_pet {
+  color: black;
+  border-bottom: 1px dotted black; }
 
-.u_deathknight {
+.npc {
+  color: black;
+  border-bottom: 1px dashed black; }
+
+
+.p_deathknight {
   color: #c41f3b; }
 
-.u_druid {
-  color: #ff7d0a; }
+.p_druid {
+  color: #e37100; }
 
-.u_hunter {
-  color: #abd473; }
+.p_hunter {
+  color: #84a35a; }
 
-.u_mage {
-  color: #69ccf0; }
+.p_mage {
+  color: #36abd6; }
 
-.u_paladin {
-  color: #f58cba; }
+.p_paladin {
+  color: #de66da; }
 
-.u_priest {
-  color: white; }
+.p_priest {
+  color: #444444; }
 
-.u_rogue {
-  color: #fff569; }
+.p_rogue {
+  color: #e6d602; }
 
-.u_shaman {
+.p_shaman {
   color: #2459ff; }
 
-.u_warlock {
+.p_warlock {
   color: #9482c9; }
 
-.u_warrior {
+.p_warrior {
   color: #c79c63; }
 
-.ui-tabs ul.ui-tabs-nav {
-  list-style-type: none; }
-  .ui-tabs ul.ui-tabs-nav li {
-    display: inline-block;
-    margin: 0px 5px 0px 0px; }
-    .ui-tabs ul.ui-tabs-nav li a {
-      display: block;
-      background: #303030;
-      border: 1px solid white;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      padding: 10px; }
-  .ui-tabs ul.ui-tabs-nav li.ui-state-active a {
-    background: #444444; }
-.ui-tabs div.ui-tabs-panel {
-  border: 1px solid white;
+.ui-widget-overlay {
+  background: url('/images/overlay.png') top left repeat;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.ui-dropdownchecklist-wrapper {
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 2px; }
+  .ui-dropdownchecklist-wrapper .ui-dropdownchecklist-hover {
+    background: #ebffff; }
+  .ui-dropdownchecklist-wrapper .ui-dropdownchecklist-text {
+    font-weight: bold;
+    padding: 3px; }
+
+.ui-dropdownchecklist-dropcontainer-wrapper {
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 5px; }
+  .ui-dropdownchecklist-dropcontainer-wrapper .ui-dropdownchecklist-dropcontainer .ui-dropdownchecklist-item:hover {
+    background: #ebffff; }
+
+.ui-dialog {
+  border: 1px solid #eeeeee;
+  background: white;
   border-radius: 5px;
-  padding: 10px; }
-.ui-tabs div.ui-tabs-hide {
+  -webkit-box-shadow: 0px 0px 7px #222; }
+  .ui-dialog .ui-dialog-titlebar {
+    background: #eeeeee;
+    padding: 5px 5px 5px 10px; }
+    .ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+      text-shadow: 1px 1px 1px white;
+      font-weight: bold;
+      font-size: 1.1em; }
+    .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+      display: none; }
+  .ui-dialog .ui-dialog-content {
+    padding: 10px; }
+
+.ui-tabs-container ul.ui-tabs-nav {
+  list-style-type: none; }
+  .ui-tabs-container ul.ui-tabs-nav li {
+    display: inline-block; }
+    .ui-tabs-container ul.ui-tabs-nav li a {
+      display: block;
+      border: 1px solid #eeeeee;
+      border-bottom: 0px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      color: #666666;
+      padding: 2px 5px 2px 5px;
+      text-shadow: 1px 1px 1px white;
+      margin: 0px 5px 0px 0px; }
+  .ui-tabs-container ul.ui-tabs-nav li.ui-tabs-selected a {
+    background: #eeeeee;
+    border-top: 2px solid #666666;
+    font-weight: bold; }
+.ui-tabs-container .ui-tabs-hide {
   display: none; }
 
 body {
-  background-color: #222222;
-  color: white;
+  background-color: white;
+  color: #666666;
   font-family: Arial;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  letter-spacing: 0.05em; }
 
 a {
-  color: #69ccf0;
+  color: #36abd6;
   text-decoration: none; }
 
 h1 {
@@ -104,24 +154,122 @@ h2 {
 p {
   margin-bottom: 0.5em; }
 
-table {
+input[type="submit"] {
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 2px;
+  color: #666666;
   padding: 2px;
-  border: 1px solid #444444;
-  margin-bottom: 0.5em; }
+  text-shadow: 1px 1px 1px #eeeeee; }
+
+table {
+  border: 1px solid #eeeeee;
+  background: white;
+  padding: 2px;
+  margin-bottom: 0.5em;
+  width: 100%; }
   table th, table td {
+    border: 1px solid #eeeeee;
     padding: 8px;
     text-align: center; }
   table .left {
     text-align: left; }
   table thead {
-    background: #303030;
-    color: white;
-    border: 1px solid #444444;
-    border-radius: 5px; }
+    background: #efefef;
+    color: #666666;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white; }
     table thead tr.sub {
-      font-size: 0.9em;
-      background: #303030; }
-  table tbody {
-    font-size: 0.9em; }
-    table tbody tr:hover {
-      background: #303030; }
+      background: white;
+      font-size: 0.85em; }
+  table tbody.major {
+    cursor: pointer;
+    font-size: 0.85em; }
+    table tbody.major .unit {
+      font-weight: bold; }
+    table tbody.major tr.r1 {
+      background: #fafafa; }
+    table tbody.major tr:hover {
+      background: #ebffff; }
+  table tbody.minor {
+    font-size: 0.8em; }
+    table tbody.minor td.first {
+      padding-left: 15px; }
+  table td.loading {
+    background: url('/images/loading.gif') 6px 6px no-repeat;
+    padding-left: 30px; }
+  table td.expandable {
+    background: url('/images/expandable.png') 9px 9px no-repeat;
+    padding-left: 30px; }
+  table td.expanded {
+    background: url('/images/expanded.png') 9px 9px no-repeat;
+    padding-left: 30px; }
+
+#header {
+  position: relative;
+  margin: auto;
+  width: 1050px; }
+  #header #logo {
+    color: !text;
+    display: inline-block;
+    font-family: Palatino Linotype, Book Antiqua, Palatino;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 5px;
+    text-shadow: 1px 1px 1px black; }
+    #header #logo a {
+      color: inherit; }
+  #header #nav {
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    right: 20px; }
+    #header #nav a {
+      color: #666666;
+      text-shadow: 1px 1px 1px white; }
+    #header #nav a.selected {
+      font-weight: bold; }
+    #header #nav ul li {
+      display: inline-block;
+      padding: 5px 10px 5px 10px; }
+    #header #nav ul li.selected {
+      background: #eeeeee;
+      border-top: 2px solid #666666;
+      -webkit-border-top-left-radius: 4px;
+      -webkit-border-top-right-radius: 4px; }
+
+#container {
+  margin: auto;
+  width: 1050px;
+  border: 3px solid #eeeeee;
+  border-radius: 3px; }
+  #container h1 {
+    background: #eeeeee;
+    display: block;
+    font-size: 1.4em;
+    margin: 0;
+    padding: 5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px white; }
+  #container h5 {
+    background: #eeeeee;
+    display: block;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0px 0px 5px 5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px white; }
+  #container #toolbar {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(232,232,232)), color-stop(0.7, rgb(255,255,255)));
+    border: 1px solid #ffffff;
+    padding: 5px; }
+    #container #toolbar div {
+      background: url('/images/grip.png') left 50% no-repeat;
+      display: inline-block;
+      padding: 3px 15px 3px 5px; }
+  #container #data {
+    padding: 5px; }
+
+.bt {
+  font-size: 0.8em;
+  color: white; }

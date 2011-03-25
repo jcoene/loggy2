@@ -2,9 +2,11 @@ class DataController < ApplicationController
 	before_filter :parse_data_params
 	
   def damage_done; respond_with_data @scope.damages.done(@attr); end
+  def damage_done_targets; respond_with_data @scope.damages.done_targets(@attr); end
   def damage_done_spells; respond_with_data @scope.damages.done_spells(@attr); end
   def damage_taken; respond_with_data @scope.damages.taken(@attr); end
   def healing_done; respond_with_data @scope.heals.done(@attr); end
+  def healing_done_targets; respond_with_data @scope.heals.done_targets(@attr); end
  	def healing_done_spells; respond_with_data @scope.heals.done_spells(@attr); end
  	def healing_taken; respond_with_data @scope.heals.taken(@attr); end
  	def auras_gained; respond_with_data @scope.auras.gained(@attr); end
@@ -25,7 +27,22 @@ class DataController < ApplicationController
 		@attr[:is_pet] = to_boolean(params[:is_pet]) if is_boolean(params[:is_pet])
 		@attr[:is_npc] = to_boolean(params[:is_npc]) if is_boolean(params[:is_npc])
 		@attr[:is_friendlyfire] = to_boolean(params[:is_friendlyfire]) if is_boolean(params[:is_friendlyfire])
+		@attr[:with_header] = to_boolean(params[:with_header]) if is_boolean(params[:with_header])
+		@attr[:segments] = string_to_array(params[:segments]) if string_is_array(params[:segments])
+
+		@minor_action = params[:minor_action] if params[:minor_action]
 		
+		@source_label = case
+			when @attr['is_player']:
+				"Player"
+			when @attr['is_npc']:
+				"Monster"
+			when @attr['is_pet']:
+				"Pet"
+			else
+				"Source"
+		end
+
 		if @attr[:segment_id] then
 			@segment = Segment.find(:first, :conditions => { :id => @attr[:segment_id] })
 			@encounter = @segment.encounter_id if not @segment.blank?

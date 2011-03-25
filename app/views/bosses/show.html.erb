@@ -1,0 +1,18 @@
+<p>
+  <b>Zone:</b>
+  <%=h @boss.zone_id %>
+</p>
+
+<p>
+  <b>Seq:</b>
+  <%=h @boss.seq %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @boss.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_boss_path(@boss) %> |
+<%= link_to 'Back', bosses_path %>

@@ -1,12 +1,55 @@
 %table
 	%thead
 		%tr
-			%th.left Player
-			%th.left Total Damage
+			%th.left= @source_label
+			%th{:colspan => 3} Total
+			%th{:colspan => 3} Hits
+			%th{:colspan => 3} Crits
+			%th{:colspan => 2} Absorbs
+			%th{:colspan => 2} Blocks
+			%th{:colspan => 4} Avoids
+		%tr.sub
+			%th.left Source
 			%th DPS
-	%tbody
+			%th Events
+			%th Amount
+			%th.sep Hits
+			%th Hit%
+			%th Damage
+			%th.sep Crits
+			%th Crit%
+			%th Damage
+			%th.sep Absorbs
+			%th Amount
+			%th.sep Blocks
+			%th Amount
+			%th.sep Miss
+			%th Dodge
+			%th Parry
+			%th Glance
 		- @data.each do |t|
-			%tr
-				%td.left= link_to(t.unit_name, "?unit_id=#{t.unit_id}", :class => Unit.html_class(t.unit_class_id))
-				%td.left= t.amount_total.pretty
-				%td= (t.amount_total/@duration.to_i).pretty
+			%tbody{:class => "major"}
+				%tr{:class => cycle("r1", "r2")}
+					- if @minor_action
+						%td{:class => "expandable left"}= unit_link(t.unit_id, t.unit_name, t.unit_class_id, t.unit_npc_id)
+					- else
+						%td{:class => "left"}= unit_link(t.unit_id, t.unit_name, t.unit_class_id, t.unit_npc_id)
+					%td.sep= (t.amount_total/@duration.to_i).pretty
+					%td.sep= t.num_total.pretty
+					%td= t.amount_total.pretty
+					%td.sep= t.num_hits.pretty
+					%td= t.amount_total > 0 ? Uptime.percent(t.amount_hits, t.amount_total, 0) : "-"
+					%td= t.amount_hits.pretty
+					%td.sep= t.num_crits.pretty
+					%td= t.amount_total > 0 ? Uptime.percent(t.amount_crits, t.amount_total, 0) : "-"
+					%td= t.amount_crits.pretty
+					%td= t.num_absorbs.pretty
+					%td= t.amount_absorbs.pretty
+					%td= t.num_blocks.pretty
+					%td= t.amount_blocks.pretty
+					%td= t.num_misses.pretty
+					%td= t.num_dodges.pretty
+					%td= t.num_parries.pretty
+					%td= t.num_glancings.pretty
+			- if @minor_action
+				%tbody{:class => "minor", :href => data_path(@minor_action, "html", data_path_merge("unit_id" => t.unit_id))}

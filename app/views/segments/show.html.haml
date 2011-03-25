@@ -1,0 +1,12 @@
+%h1= @title
+#toolbar
+	#segment = @segment.label
+	#duration= @duration.to_clock
+
+#data
+	%div.ui-tabs-container
+		%ul
+			%li!=link_to("Player Damage", data_path("damage_done", "html", {"segment_id" => @segment.id, "is_player" => true, "is_friendlyfire" => false}))
+			%li!=link_to("Player Incoming", data_path("damage_taken", "html", {"segment_id" => @segment.id, "is_player" => true, "is_friendlyfire" => false}))
+			%li=link_to("Monster Damage", data_path("damage_done", "html", {"segment_id" => @segment.id, "is_npc" => true, "is_friendlyfire" => false}))
+			%li=link_to("Monster Incoming", data_path("damage_taken", "html", {"segment_id" => @segment.id, "is_npc" => true, "is_friendlyfire" => false}))

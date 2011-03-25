@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100421213710) do
+ActiveRecord::Schema.define(:version => 20100504222205) do
+
+  create_table "bosses", :force => true do |t|
+    t.integer  "zone_id"
+    t.integer  "seq"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "encounters", :force => true do |t|
     t.integer  "boss_id"
@@ -266,5 +274,11 @@ ActiveRecord::Schema.define(:version => 20100421213710) do
   end
 
   add_index "units", ["report_id", "guid"], :name => "index_units_on_report_id_and_guid", :unique => true
+
+  create_table "zones", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
